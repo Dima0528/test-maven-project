@@ -7,7 +7,7 @@ pipeline {
 
                 bat '''
 
-                    mvn -v
+                    mvn clean install
 
                 '''
             }
