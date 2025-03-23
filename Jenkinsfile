@@ -1,13 +1,20 @@
 pipeline {
     agent any
     stages {
-        stage('Збірка') {
+        stage('Install') {
             steps {
-                bat 'dir "C:\\Program Files\\Maven\\apache-maven-3.9.9"'
-
                 bat '''
 
                     mvn clean install
+
+                '''
+            }
+        }
+        stage('Tests') {
+            steps {
+                bat '''
+
+                    mvn test
 
                 '''
             }
